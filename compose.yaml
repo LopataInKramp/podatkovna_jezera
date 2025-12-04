@@ -48,8 +48,10 @@ services:
       - ./nifi/state:/opt/nifi/nifi-current/state
       - ./nifi/temp:/opt/nifi/nifi-current/temp
       - ./data:/data
-      - ./postgresql-42.7.7.jar:/opt/nifi/nifi-current/lib/
-      - ./parquet.nar:/opt/nifi/nifi-current/lib/
+      - ./postgresql-42.7.7.jar:/opt/nifi/nifi-current/lib/postgresql-42.7.7.jar
+      - ./lib/nifi-parquet-nar-2.6.0.nar:/opt/nifi/nifi-current/lib/nifi-parquet-nar-2.6.0.nar
+      - ./nifi-hadoop-libraries-nar-2.6.0.nar:/opt/nifi/nifi-current/lib/nifi-hadoop-libraries-nar-2.6.0.nar
+
     depends_on:
       - minio
   db:
